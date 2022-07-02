@@ -1,0 +1,95 @@
+$Font-primary: "Roboto Condensed", Sans-serif;
+$Font-secondary: "Arima", Sans-serif;
+$Color-primary: #fff;
+$Color-secondary: #aaa;
+$bp-large: 68.75em;
+$bp-medium: 56.25em;
+$bp-small: 37.5em;
+
+.destination-img {
+  grid-column: 1/2;
+  grid-row: 3/-1;
+  //   background-image: url("../../assets/destination/image-moon.png");
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // background-position: center;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+    grid-row: 3/4;
+    justify-: center;
+  }
+  // align-items: center;
+}
+.planets {
+  // display: flex;
+  position: absolute;
+  width: 70vh;
+  // height: 70vh;
+  opacity: 0;
+  top: 30%;
+  @media only screen and (max-width: $bp-medium) {
+    top: 0;
+    padding-bottom: 2rem;
+    // left: 35%;
+  }
+}
+
+.planet {
+  // height: 30rem;
+  // position: absolute;
+  width: 40vh;
+  height: 40vh;
+  // background-color: rgb(89, 178, 208);
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: 150% 150%;
+  // background-position: 0;
+  box-shadow: inset 0 0 20px #023e5c, 0 0 120px #023e5c;
+  animation: planet 40s linear infinite;
+  @media only screen and (max-width: $bp-medium) {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+@keyframes planet {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 70%;
+  }
+}
+
+.active-image {
+  display: block;
+  transform: translateX(10rem) scale(1.3);
+  transition: all 0.8s ease-in;
+  opacity: 1;
+  position: relative;
+  margin: 0 auto;
+}
+.next-image {
+  display: block;
+  opacity: 1;
+  transform: translate(40%, -1rem) scale(-0.5, 0.5);
+  transition: all 0.8s ease-in;
+  // position: relative;
+  @media only screen and (max-width: $bp-medium) {
+    transform: translate(50%, -1rem) scale(0.5);
+  }
+}
+.previous-image {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -1rem) scale(0.5);
+  transition: all 0.8s ease-in;
+  // position: relative;
+  @media only screen and (max-width: $bp-medium) {
+    transform: translate(-20%, -1rem) scale(0.5);
+  }
+}

@@ -1,18 +1,17 @@
-import "./App.scss";
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Navigation from "./routes/navigation/navigation.components";
-import HOME from "./routes/Home/home.components";
-import Technology from "./routes/technology/technology.components";
-import Crew from "./routes/crew/crew.components";
-import Destination from "./routes/destination/destination.components";
-
+import image0 from "./crew/image-douglas-hurley.png";
+import image1 from "./crew/image-mark-shuttleworth.png";
+import image2 from "./crew/image-victor-glover.png";
+import image3 from "./crew/image-anousheh-ansari.png";
+import Moon from "./destination/image-moon.png";
+import Mars from "./destination/image-mars.png";
+import Europa from "./destination/image-europa.png";
+import Titan from "./destination/image-titan.png";
 export const data = {
   destinations: [
     {
-      name: "Moon",
+      name: Moon,
       images: {
-        png: "../../assets/destination/image-moon.png",
+        png: "./assets/destination/image-moon.png",
         webp: "./assets/destination/image-moon.webp",
       },
       description:
@@ -21,7 +20,7 @@ export const data = {
       travel: "3 days",
     },
     {
-      name: "Mars",
+      name: Mars,
       images: {
         png: "./assets/destination/image-mars.png",
         webp: "./assets/destination/image-mars.webp",
@@ -32,7 +31,7 @@ export const data = {
       travel: "9 months",
     },
     {
-      name: "Europa",
+      name: Europa,
       images: {
         png: "./assets/destination/image-europa.png",
         webp: "./assets/destination/image-europa.webp",
@@ -43,7 +42,7 @@ export const data = {
       travel: "3 years",
     },
     {
-      name: "Titan",
+      name: Titan,
       images: {
         png: "./assets/destination/image-titan.png",
         webp: "./assets/destination/image-titan.webp",
@@ -58,7 +57,7 @@ export const data = {
     {
       name: "Douglas Hurley",
       images: {
-        png: "../../assets/crew/image-douglas-hurley.png",
+        png:image0,
         webp: "./assets/crew/image-douglas-hurley.webp",
       },
       role: "Commander",
@@ -67,7 +66,7 @@ export const data = {
     {
       name: "Mark Shuttleworth",
       images: {
-        png: "./assets/crew/image-mark-shuttleworth.png",
+        png:image1,
         webp: "./assets/crew/image-mark-shuttleworth.webp",
       },
       role: "Mission Specialist",
@@ -76,7 +75,7 @@ export const data = {
     {
       name: "Victor Glover",
       images: {
-        png: "./assets/crew/image-victor-glover.png",
+        png:image2,
         webp: "./assets/crew/image-victor-glover.webp",
       },
       role: "Pilot",
@@ -85,7 +84,7 @@ export const data = {
     {
       name: "Anousheh Ansari",
       images: {
-        png: "./assets/crew/image-anousheh-ansari.png",
+        png:image3,
         webp: "./assets/crew/image-anousheh-ansari.webp",
       },
       role: "Flight Engineer",
@@ -122,17 +121,3 @@ export const data = {
     },
   ],
 };
-const App = function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Navigation />}>
-        <Route index element={<HOME />} />
-        <Route path="/destination" element={<Destination />} />
-        <Route path="/crew" element={<Crew />} />
-        <Route path="/technology" element={<Technology />} />
-      </Route>
-    </Routes>
-  );
-};
-
-export default App;

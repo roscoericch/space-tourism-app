@@ -1,0 +1,52 @@
+$Font-primary: "Roboto Condensed", Sans-serif;
+$Font-secondary: "Arima", Sans-serif;
+$Color-primary: #fff;
+$Color-secondary: #aaa;
+$bp-large: 68.75em;
+$bp-medium: 56.25em;
+$bp-small: 37.5em;
+
+.home {
+  // width: 100vw;
+  // height: 100vh;
+  background-image: url(../../assets/home/background-home-desktop.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @media only screen and (max-width: $bp-medium) {
+    background-image: url(../../assets/home/background-home-tablet.jpg);
+  }
+}
+
+.home-content {
+  color: #fff;
+  padding: 2rem 1rem 12rem 16rem;
+  flex-basis: 35%;
+  // &:not(:last-of-type) {
+  //   margin-bottom: 2rem;
+  // }
+  &-h3 {
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  &-h1 {
+    text-transform: uppercase;
+    font-size: 10rem;
+    margin-bottom: 2rem;
+  }
+  &-p {
+    line-height: 3rem;
+  }
+}
+.home-cta {
+  padding-bottom: 16rem;
+  padding-right: 25rem;
+}
+.home-cta-content {
+  text-transform: uppercase;
+  background-color: #fff;
+  padding: 7rem 4rem;
+  border-radius: 50%;
+}

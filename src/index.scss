@@ -1,0 +1,58 @@
+$Font-primary: "Roboto Condensed", Sans-serif;
+$Font-secondary: "Arima", Sans-serif;
+$Color-primary: #fff;
+$Color-secondary: #aaa;
+$bp-large: 68.75em;
+$bp-medium: 56.25em;
+$bp-small: 37.5em;
+body {
+  margin: 0;
+  font-family: $Font-secondary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem;
+  // height: 99vh;
+  overflow: hidden;
+  color: $Color-secondary;
+  @media only screen and (min-width: $bp-medium) {
+    // height:100%;
+  }
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 1.5rem;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $Font-primary;
+  color: $Color-primary;
+}

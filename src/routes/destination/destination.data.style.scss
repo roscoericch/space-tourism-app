@@ -1,0 +1,43 @@
+$Font-primary: "Roboto Condensed", Sans-serif;
+$Font-secondary: "Arima", Sans-serif;
+$Color-primary: #fff;
+$Color-secondary: #aaa;
+$bp-large: 68.75em;
+$bp-medium: 56.25em;
+$bp-small: 37.5em;
+
+.destination-data {
+  padding: 0 6rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.data-title {
+  font-size: 10rem;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+.destination-text {
+  padding: 2rem 0 1rem 0;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #fff;
+}
+.destination-properties {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 0;
+}
+.data-time {
+  padding-left: 6rem;
+  & *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+.data-distance {
+  & *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
