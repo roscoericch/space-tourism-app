@@ -5,6 +5,7 @@ import { ReactComponent as SpaceLogo } from "../../assets/shared/logo.svg";
 import "./navigation.style.scss";
 const Navigation = () => {
   const { pathname } = useLocation();
+  const [activateNav, setActivateNav] = useState(true);
   return (
     <Fragment>
       <Outlet />
@@ -12,10 +13,35 @@ const Navigation = () => {
         <Link className="navigation-logo" to="/">
           <SpaceLogo className="logo" />
         </Link>
-        <div className="border-line"></div>
-        <div className="nav-links-container">
+        <div className="border-line">with love ❤❤💙🧡💖💖 from Razak</div>
+        <div
+          className={
+            activateNav ? "hamburger animate-reverse" : "hamburger animate"
+          }
+          onClick={() => {
+            setActivateNav(!activateNav);
+          }}
+        >
+          <span className=" lines line1"></span>
+          <span className="line2">
+            <span className="line-half line-half1"></span>
+            <span className="line-half line-half2"></span>
+          </span>
+          <span className=" lines line3"></span>
+        </div>
+        <div
+          className={
+            activateNav
+              ? "nav-links-container displayNav moveOutNav"
+              : "nav-links-container displayNav moveInNav"
+          }
+        >
           <Link
-            className={pathname === "/" ? "nav-link active" : "nav-link"}
+            className={
+              pathname === "/"
+                ? "nav-link active nav-link1"
+                : "nav-link nav-link1"
+            }
             to="/"
           >
             <span className="span">00</span> HOME

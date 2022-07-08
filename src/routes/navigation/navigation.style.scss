@@ -1,7 +1,10 @@
-$Font-primary: "Arima",Sans-serif;
+$Font-primary: "Roboto Condensed", Sans-serif;
+$Font-secondary: "Arima", Sans-serif;
 $Color-primary: #fff;
 $Color-secondary: #aaa;
-
+$bp-large: 68.75em;
+$bp-medium: 56.25em;
+$bp-small: 37.5em;
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -12,21 +15,35 @@ $Color-secondary: #aaa;
   width: 100%;
   padding: 1rem 3rem;
 }
+
+.logo {
+  margin-right: 1rem;
+}
 .border-line {
-  background-color: #aaa;
-  padding: 0 8rem;
-  height: 2px;
-  margin-right: -3rem;
-  margin-left: 10rem;
-  flex: 1;
+  // background-color: #aaa;
+  padding: 0 5rem;
+  height: 1px;
+  width: 100%;
+  // display: block;
+  border: 1px solid #aaa;
+  // margin-right: -3rem;
+  // margin-left: 3rem;
+  flex: auto;
   z-index: 20;
+  display: inline-block;
+  position: relative;
+  @media only screen and (max-width: $bp-small) {
+    // margin-left: 6rem;
+    // flex: 40%;
+    // margin-right: 3rem;
+  }
 }
 .nav-link {
   padding: 1rem;
   color: #fff;
-  display: inline-block;
+  display: flex;
   position: relative;
-  transition: opacity 0.2s;
+  transition: opacity 0.1s;
   ::before {
     content: "";
     height: 2px;
@@ -35,7 +52,7 @@ $Color-secondary: #aaa;
     background-color: #fff;
     border-radius: 35%;
     position: absolute;
-    top: 100%;
+    top: 90%;
     opacity: 0;
   }
   &.active,
@@ -46,6 +63,130 @@ $Color-secondary: #aaa;
   }
 }
 .nav-links-container {
-  padding: 1.5rem 8rem 1.5rem 4rem;
+  flex: auto;
+  display: flex;
+  padding: 1.5rem 2rem 1.5rem 4rem;
   backdrop-filter: blur(5px);
+  @media only screen and (max-width: $bp-small) {
+    display: none;
+  }
+  .nav-link1 {
+    @media only screen and (max-width: $bp-small) {
+      padding-top: 7rem;
+    }
+  }
+  @media only screen and (max-width: $bp-medium) {
+    padding: 1.5rem 2rem 1.5rem 2rem;
+  }
+}
+
+.hamburger {
+  display: none;
+  z-index: 1000;
+  @media only screen and (max-width: $bp-small) {
+    display: flex;
+  }
+  flex-direction: column;
+  margin-left: 2rem;
+  .lines {
+    color: $Color-primary;
+    border: 1px solid $Color-primary;
+    height: 1px;
+    width: 7rem;
+  }
+  .line2 {
+    display: flex;
+  }
+  .line1,
+  .line-half,
+  .line3 {
+    margin-bottom: 1.5rem;
+  }
+  .line-half {
+    color: $Color-primary;
+    border: 1px solid $Color-primary;
+    height: 1px;
+    width: 3.5rem;
+  }
+  // *:not(:last-of-type) {
+  //   margin-bottom: 1rem;
+  // }
+}
+.animate {
+  .line1 {
+    transform: rotate(40deg) translateY(2.5rem);
+    transition: all 1s;
+  }
+  .line2 {
+    .line-half1 {
+      transform: rotate(40deg);
+      transition: all 1s;
+    }
+    .line-half2 {
+      transform: rotate(-40deg) translate(-0.7rem, -1.8rem);
+      transition: all 1s;
+    }
+  }
+  .line3 {
+    transform: rotate(-40deg) translateY(-2rem);
+    transition: all 1s;
+  }
+}
+
+.animate-reverse {
+  .line1 {
+    transform: rotate(0) translateY(0);
+    transition: all 1s;
+  }
+  .line2 {
+    .line-half1 {
+      transform: rotate(0);
+      transition: all 1s;
+    }
+    .line-half2 {
+      transform: rotate(0) translate(0);
+      transition: all 1s;
+    }
+  }
+  .line3 {
+    transform: rotate(0) translateY(0);
+    transition: all 1s;
+  }
+}
+
+.displayNav {
+  @media only screen and (max-width: $bp-small) {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+  }
+}
+.moveInNav {
+  @media only screen and (max-width: $bp-small) {
+    animation: moveInNav 2s ease forwards;
+  }
+}
+
+.moveOutNav {
+  @media only screen and (max-width: $bp-small) {
+    animation: moveOutNav 2s ease forwards;
+  }
+}
+@keyframes moveInNav {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes moveOutNav {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }

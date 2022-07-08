@@ -12,13 +12,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
   // height: 99vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   color: $Color-secondary;
   @media only screen and (min-width: $bp-medium) {
     // height:100%;
   }
   @media only screen and (max-width: $bp-medium) {
     font-size: 1.5rem;
+    height: 100%;
+    overflow-y: scroll;
+    width: 100vw;
   }
 }
 

@@ -8,22 +8,36 @@ $bp-small: 37.5em;
 
 .home {
   // width: 100vw;
-  // height: 100vh;
+  height: 100vh;
   background-image: url(../../assets/home/background-home-desktop.jpg);
   background-size: cover;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 40vh auto;
+  grid-column-gap: 3rem;
 
   @media only screen and (max-width: $bp-medium) {
     background-image: url(../../assets/home/background-home-tablet.jpg);
+    grid-template-rows: 40vh auto auto;
+    justify-items: center;
+    align-content: center;
+    text-align: center;
   }
 }
 
 .home-content {
   color: #fff;
   padding: 2rem 1rem 12rem 16rem;
-  flex-basis: 35%;
+  grid-column: 1/2;
+  grid-row: 2/-1;
+  justify-self: center;
+  align-self: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    padding: 2rem;
+  }
   // &:not(:last-of-type) {
   //   margin-bottom: 2rem;
   // }
@@ -42,7 +56,20 @@ $bp-small: 37.5em;
 }
 .home-cta {
   padding-bottom: 16rem;
-  padding-right: 25rem;
+  padding-right: 15rem;
+  grid-column: 2/-1;
+  grid-row: 2/-1;
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: 1/-1;
+    grid-row: 3/-1;
+    padding-bottom: 16rem;
+    padding-right: 0;
+  }
 }
 .home-cta-content {
   text-transform: uppercase;

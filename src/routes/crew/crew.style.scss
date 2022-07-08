@@ -7,7 +7,7 @@ $bp-medium: 56.25em;
 $bp-small: 37.5em;
 .crew {
   // width: 100vw;
-  // height: 100vh;
+  height: 100vh;
   background-image: url(../../assets/crew/background-crew-desktop.jpg);
   background-size: cover;
   background-position: bottom;
@@ -17,7 +17,8 @@ $bp-small: 37.5em;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 10vh min-content auto;
   grid-column-gap: 1rem;
-
+  // overflow: hidden;
+  position: relative;
   @media only screen and (max-width: $bp-medium) {
     // height: 100%;
     // width: 100%;
@@ -61,6 +62,9 @@ $bp-small: 37.5em;
     // width: 100%;
     min-width: 100%;
     position: absolute;
+    @media only screen and (max-width: $bp-medium) {
+      padding: 1rem 3rem;
+    }
   }
 
   .crew-info {
@@ -83,22 +87,37 @@ $bp-small: 37.5em;
       grid-row: 4/-1;
       justify-self: center;
     }
+    position: relative;
   }
   .crew-images {
     align-self: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    // overflow: hidden;
+    // position: absolute;
     // z-index: 10;
   }
   .crew-images {
     max-width: 60rem;
+    position: absolute;
+    @media only screen and (max-width: $bp-small) {
+      transform: translateX(-50%);
+    }
+    @media only screen and (min-width: $bp-medium) {
+      right: 0;
+    }
   }
   .crew-img {
     height: 52rem;
     position: absolute;
     opacity: 0;
+    @media only screen and (max-width: $bp-small) {
+      height: 25rem;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      height: 40rem;
+    }
   }
   .arrow {
     cursor: pointer;
@@ -120,10 +139,22 @@ $bp-small: 37.5em;
   .crew-name {
     font-size: 7rem;
     padding-bottom: 2rem;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2rem;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 4rem;
+    }
   }
   .crew-role {
     font-size: 3rem;
     padding-bottom: 3rem;
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2rem;
+    }
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2.5rem;
+    }
   }
   .crew-bio {
     line-height: 1.5;
@@ -164,7 +195,7 @@ $bp-small: 37.5em;
     transform: translateX(0);
     transition: all 0.8s ease-in;
     opacity: 1;
-    position: relative;cd 
+    position: relative;
   }
   .next-slide {
     // display: block;

@@ -7,32 +7,35 @@ $bp-medium: 56.25em;
 $bp-small: 37.5em;
 
 .destination-img {
-  grid-column: 1/2;
-  grid-row: 3/-1;
+  grid-column: 1/-1;
+  grid-row: 3/4;
   //   background-image: url("../../assets/destination/image-moon.png");
   // background-repeat: no-repeat;
   // background-size: contain;
   // background-position: center;
   padding-bottom: 2rem;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-content: center;
   position: relative;
   @media only screen and (max-width: $bp-medium) {
     grid-column: 1/-1;
     grid-row: 3/4;
-    justify-: center;
+    justify-content: center;
   }
   // align-items: center;
 }
 .planets {
-  // display: flex;
+  // display: none;
   position: absolute;
-  width: 70vh;
+  // width: 70vh;
   // height: 70vh;
+  grid-column: 2/3;
+  grid-row: 1/2;
   opacity: 0;
-  top: 30%;
   @media only screen and (max-width: $bp-medium) {
-    top: 0;
+    // top: 0;
     padding-bottom: 2rem;
     // left: 35%;
   }
@@ -41,8 +44,8 @@ $bp-small: 37.5em;
 .planet {
   // height: 30rem;
   // position: absolute;
-  width: 40vh;
-  height: 40vh;
+  width: 30vh;
+  height: 30vh;
   // background-color: rgb(89, 178, 208);
   border-radius: 50%;
   background-repeat: no-repeat;
@@ -53,6 +56,10 @@ $bp-small: 37.5em;
   @media only screen and (max-width: $bp-medium) {
     height: 20rem;
     width: 20rem;
+  }
+  @media only screen and (max-width: $bp-small) {
+    height: 15rem;
+    width: 15rem;
   }
 }
 
@@ -67,29 +74,35 @@ $bp-small: 37.5em;
 
 .active-image {
   display: block;
-  transform: translateX(10rem) scale(1.3);
-  transition: all 0.8s ease-in;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  transform: scale(1.3) translateX(0);
+  transition: all 1s ease;
   opacity: 1;
   position: relative;
-  margin: 0 auto;
+  // margin: 0 auto;
 }
 .next-image {
   display: block;
   opacity: 1;
-  transform: translate(40%, -1rem) scale(-0.5, 0.5);
-  transition: all 0.8s ease-in;
-  // position: relative;
-  @media only screen and (max-width: $bp-medium) {
-    transform: translate(50%, -1rem) scale(0.5);
+  grid-column: 3/4;
+  grid-row: 1/2;
+  transform: scale(0.5) translateX(100%);
+  transition: all 1s ease;
+  position: relative;
+  @media only screen and (max-width: $bp-small) {
+    transform: scale(0.5) translateX(70%);
   }
 }
 .previous-image {
   display: block;
+  grid-column: 1/2;
+  grid-row: 1/2;
   opacity: 1;
-  transform: translate(-50%, -1rem) scale(0.5);
-  transition: all 0.8s ease-in;
-  // position: relative;
-  @media only screen and (max-width: $bp-medium) {
-    transform: translate(-20%, -1rem) scale(0.5);
+  transform: scale(0.5) translateX(-100%);
+  transition: all 1s ease;
+  position: relative;
+  @media only screen and (max-width: $bp-small) {
+    transform: scale(0.5) translateX(-70%);
   }
 }
