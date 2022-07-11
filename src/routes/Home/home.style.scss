@@ -1,5 +1,6 @@
 $Font-primary: "Roboto Condensed", Sans-serif;
 $Font-secondary: "Arima", Sans-serif;
+$Font-cormorant: "Cormorant SC", serif;
 $Color-primary: #fff;
 $Color-secondary: #aaa;
 $bp-large: 68.75em;
@@ -18,7 +19,7 @@ $bp-small: 37.5em;
 
   @media only screen and (max-width: $bp-medium) {
     background-image: url(../../assets/home/background-home-tablet.jpg);
-    grid-template-rows: 40vh auto auto;
+    grid-template-rows: auto auto;
     justify-items: center;
     align-content: center;
     text-align: center;
@@ -44,14 +45,17 @@ $bp-small: 37.5em;
   &-h3 {
     text-transform: uppercase;
     margin-bottom: 2rem;
+    font-family: $Font-primary;
   }
   &-h1 {
     text-transform: uppercase;
-    font-size: 10rem;
+    font-size: 12rem;
     margin-bottom: 2rem;
+    font-family: $Font-cormorant;
   }
   &-p {
     line-height: 3rem;
+    font-family: $Font-primary;
   }
 }
 .home-cta {
@@ -67,7 +71,8 @@ $bp-small: 37.5em;
   @media only screen and (max-width: $bp-medium) {
     grid-column: 1/-1;
     grid-row: 3/-1;
-    padding-bottom: 16rem;
+    padding-bottom: 0;
+    padding-top: 16rem;
     padding-right: 0;
   }
 }

@@ -22,7 +22,7 @@ $bp-small: 37.5em;
 .border-line {
   // background-color: #aaa;
   padding: 0 5rem;
-  height: 1px;
+  height: .1px;
   width: 100%;
   // display: block;
   border: 1px solid #aaa;
@@ -78,6 +78,11 @@ $bp-small: 37.5em;
   @media only screen and (max-width: $bp-medium) {
     padding: 1.5rem 2rem 1.5rem 2rem;
   }
+  .nav-link {
+    span {
+      margin-right: 0.5rem;
+    }
+  }
 }
 
 .hamburger {
@@ -91,7 +96,7 @@ $bp-small: 37.5em;
   .lines {
     color: $Color-primary;
     border: 1px solid $Color-primary;
-    height: 1px;
+    height: .1px;
     width: 7rem;
   }
   .line2 {
@@ -105,7 +110,7 @@ $bp-small: 37.5em;
   .line-half {
     color: $Color-primary;
     border: 1px solid $Color-primary;
-    height: 1px;
+    height: .1px;
     width: 3.5rem;
   }
   // *:not(:last-of-type) {
@@ -115,42 +120,42 @@ $bp-small: 37.5em;
 .animate {
   .line1 {
     transform: rotate(40deg) translateY(2.5rem);
-    transition: all 1s;
+    transition: all 0.5s;
   }
   .line2 {
     .line-half1 {
       transform: rotate(40deg);
-      transition: all 1s;
+      transition: all 0.5s;
     }
     .line-half2 {
       transform: rotate(-40deg) translate(-0.7rem, -1.8rem);
-      transition: all 1s;
+      transition: all 0.5s;
     }
   }
   .line3 {
     transform: rotate(-40deg) translateY(-2rem);
-    transition: all 1s;
+    transition: all 0.5s;
   }
 }
 
 .animate-reverse {
   .line1 {
     transform: rotate(0) translateY(0);
-    transition: all 1s;
+    transition: all 0.5s;
   }
   .line2 {
     .line-half1 {
       transform: rotate(0);
-      transition: all 1s;
+      transition: all 0.5s;
     }
     .line-half2 {
       transform: rotate(0) translate(0);
-      transition: all 1s;
+      transition: all 0.5s;
     }
   }
   .line3 {
     transform: rotate(0) translateY(0);
-    transition: all 1s;
+    transition: all 0.5s;
   }
 }
 
@@ -165,13 +170,13 @@ $bp-small: 37.5em;
 }
 .moveInNav {
   @media only screen and (max-width: $bp-small) {
-    animation: moveInNav 2s ease forwards;
+    animation: moveInNav 0.5s ease forwards;
   }
 }
 
 .moveOutNav {
   @media only screen and (max-width: $bp-small) {
-    animation: moveOutNav 2s ease forwards;
+    animation: moveOutNav 0.5s ease forwards;
   }
 }
 @keyframes moveInNav {

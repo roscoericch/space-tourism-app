@@ -19,10 +19,11 @@ $bp-small: 37.5em;
 }
 .data-title {
   font-size: 4rem;
-  padding: 1rem 0;
+  padding: 0 0 0 1rem;
   text-transform: uppercase;
+
   @media only screen and (max-width: $bp-medium) {
-    font-size: 5rem;
+    font-size: 7rem;
   }
 }
 .destination-text {
