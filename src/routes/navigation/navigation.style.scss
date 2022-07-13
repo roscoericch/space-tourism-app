@@ -22,7 +22,7 @@ $bp-small: 37.5em;
 .border-line {
   // background-color: #aaa;
   padding: 0 5rem;
-  height: .1px;
+  height: 0.1px;
   width: 100%;
   // display: block;
   border: 1px solid #aaa;
@@ -95,8 +95,9 @@ $bp-small: 37.5em;
   margin-left: 2rem;
   .lines {
     color: $Color-primary;
-    border: 1px solid $Color-primary;
-    height: .1px;
+    // border: 1px solid $Color-primary;
+    background-color: $Color-primary;
+    height: 1px;
     width: 7rem;
   }
   .line2 {
@@ -109,8 +110,9 @@ $bp-small: 37.5em;
   }
   .line-half {
     color: $Color-primary;
-    border: 1px solid $Color-primary;
-    height: .1px;
+    // border: 1px solid $Color-primary;
+    background-color: $Color-primary;
+    height: 1px;
     width: 3.5rem;
   }
   // *:not(:last-of-type) {

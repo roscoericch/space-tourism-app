@@ -13,6 +13,7 @@ export const ActiveContext = createContext({
 
 export const StateProvider = ({ children }) => {
   const { crew } = data;
+  const { technology } = data;
   const [CrewState, setCrewState] = useState(0);
   const [DestinationState, setDestinationState] = useState(0);
   const [TechnologyState, setTechnologyState] = useState(0);
@@ -23,7 +24,28 @@ export const StateProvider = ({ children }) => {
     if (CrewState < 0) {
       return setCrewState(crew.length - 1);
     }
+  }, [CrewState, crew.length]);
+  useEffect(() => {
+    if (TechnologyState > technology.length - 1) {
+      return setTechnologyState(0);
+    }
+    if (TechnologyState < 0) {
+      return setTechnologyState(technology.length - 1);
+    }
+  }, [TechnologyState, technology.length]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCrewState(CrewState + 1);
+    }, 5000);
+    return () => clearInterval(interval);
   }, [CrewState]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTechnologyState(TechnologyState + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [TechnologyState]);
   const increaseCrewState = () => {
     setCrewState(CrewState + 1);
   };

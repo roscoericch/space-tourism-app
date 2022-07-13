@@ -17,6 +17,12 @@ const Destination = () => {
     name: Moon,
     id: 0,
   });
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setActiveState(id + 1);
+  //   }, 4000);
+  //   return () => clearInterval(interval);
+  // }, [activeState]);
   return (
     <div className="destination">
       <div className="title">
@@ -101,7 +107,13 @@ const Destination = () => {
       </div>
       <div className="destination-img">
         {destinations.map((element, index) => {
-          return <DestinationImage id={activeState.id} name={activeState.name} index={index} />;
+          return (
+            <DestinationImage
+              id={activeState.id}
+              name={activeState.name}
+              index={index}
+            />
+          );
         })}
       </div>
     </div>

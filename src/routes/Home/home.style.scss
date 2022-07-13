@@ -19,7 +19,7 @@ $bp-small: 37.5em;
 
   @media only screen and (max-width: $bp-medium) {
     background-image: url(../../assets/home/background-home-tablet.jpg);
-    grid-template-rows: auto auto;
+    grid-template-rows: 10vh auto auto;
     justify-items: center;
     align-content: center;
     text-align: center;
@@ -37,7 +37,7 @@ $bp-small: 37.5em;
   @media only screen and (max-width: $bp-medium) {
     grid-column: 1/-1;
     grid-row: 2/3;
-    padding: 2rem;
+    padding: 4rem 2rem 2rem 2rem;
   }
   // &:not(:last-of-type) {
   //   margin-bottom: 2rem;
@@ -72,7 +72,7 @@ $bp-small: 37.5em;
     grid-column: 1/-1;
     grid-row: 3/-1;
     padding-bottom: 0;
-    padding-top: 16rem;
+    padding-top: 10rem;
     padding-right: 0;
   }
 }
